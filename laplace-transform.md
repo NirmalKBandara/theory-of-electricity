@@ -63,23 +63,20 @@ $$ \mathcal{L}^{-1}\{aF_1(s) + bF_2(s)\} = af_1(t) + bf_2(t) $$
 ### 2. Differentiation Property
 **First derivative:**
 
-$$ \mathcal{L}\left\{\frac{df(t)}{dt}\right\} = s \cdot F(s) - f(0^+) $$
+$$ \mathcal{L}\{df(t)/dt\} = s \cdot F(s) - f(0^+) $$
 
 
 **Second derivative:**
 
-$$ \mathcal{L}\left\{\frac{d^2f(t)}{dt^2}\right\} = s^2 \cdot F(s) - s \cdot f(0^+) - f'(0^+) $$
-
+$$ \mathcal{L}\{d^2f(t)/dt^2\} = s^2 \cdot F(s) - s \cdot f(0^+) - f'(0^+) $$
 
 **General nth derivative:**
 
-$$ \mathcal{L}\left\{\frac{d^nf(t)}{dt^n}\right\} = s^nF(s) - s^{n-1}f(0^+) - s^{n-2}f'(0^+) - \ldots - f^{(n-1)}(0^+) $$
-
+$$ \mathcal{L}\{d^nf(t)/dt^n\} = s^nF(s) - s^{n-1}f(0^+) - s^{n-2}f'(0^+) - \ldots - f^{(n-1)}(0^+) $$
 
 ### 3. Integration Property
 
-$$ \mathcal{L}\left\{\int_0^t f(t)\,dt\right\} = \frac{F(s)}{s} $$
-
+$$ \mathcal{L}\{\int_0^t f(t)\,dt\} = \frac{F(s)}{s} $$
 
 ### 4. Value Theorems
 **Initial Value Theorem:**
@@ -95,13 +92,12 @@ $$ f(\infty) = \lim_{t \to \infty} f(t) = \lim_{s \to 0} s \cdot F(s) $$
 ### 5. Scaling Properties
 **Time Scaling:**
 
-$$ \mathcal{L}\left\{f\left(\frac{t}{a}\right)\right\} = a \cdot F(as) $$
+$$ \mathcal{L}\{f(t/a)\} = a \cdot F(as) $$
 
 
 **Frequency Scaling:**
 
-$$ \mathcal{L}^{-1}\left\{F\left(\frac{s}{a}\right)\right\} = a \cdot f(at) $$
-
+$$ \mathcal{L}^{-1}\{F(s/a)\} = a \cdot f(at) $$
 
 ### 6. Multiplication by $t^n$
 
@@ -229,9 +225,8 @@ $$ y(t) = \delta(t) + e^{-t} - 2e^{-2t} \quad \text{for } t > 0 $$
 ### Example: Complex Roots
 
 Find the inverse Laplace transform of:
-```ruby
+
 $$ Y(s) = \frac{s+2}{s^2+5s+8.5} $$
-```
 
 **Step 1:** Complete the square in denominator
 
