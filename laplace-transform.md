@@ -39,6 +39,8 @@ However, we don't need to calculate in this manner. Instead, we generally obtain
 
 In system analysis, the output in the s-domain is obtained by multiplying the transfer function and input function:
 
+![Diagram 01](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2012-19-24.png)
+
 $$ Y(s) = F(s) \cdot U(s) $$
 
 
@@ -116,22 +118,17 @@ $$ \mathcal{L}^{-1}\{F(s+a)\} = e^{-at} \cdot f(t) $$
 ## Common Excitation Functions
 
 ### Unit Impulse Function $\delta(t)$
-- **Definition:** Zero everywhere except at origin where it's infinite
-- **Property:** 
 
-$$ \int_{-\infty}^{\infty} \delta(t)\,dt = 1 $$
+![Diagram 02](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2012-44-48.png)
+
 
 - **Laplace Transform:** 
 
 $$ \mathcal{L}\{\delta(t)\} = 1 $$
 
 ### Unit Step Function $u(t)$
-- **Definition:** 
 
-$$ u(t) = \begin{cases} 
-0, & t < 0 \\
-1, & t \geq 0 
-\end{cases} $$
+![Diagram 03](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2012-46-06.png)
 
 - **Laplace Transform:** 
 
@@ -139,23 +136,26 @@ $$ \mathcal{L}\{u(t)\} = \frac{1}{s} $$
 
 
 ### Unit Ramp Function $r(t)$
-- **Definition:**
-$$ r(t) = \begin{cases} 
-0, & t < 0 \\
-t, & t \geq 0 
-\end{cases} $$
+
+![Diagram 04](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2012-47-59.png)
 
 - **Laplace Transform:** 
 
 $$ \mathcal{L}\{r(t)\} = \frac{1}{s^2} $$
 
 ### Polynomial Function $y(t) = t^n$
+
+![Diagram 05](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2012-49-23.png)
+
 - **Laplace Transform:** 
 
 $$ \mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}} $$
 
 
 ### Exponential Function $y(t) = e^{-at}$
+
+![Diagram 06](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2012-49-50.png)
+
 - **Laplace Transform:** 
 
 $$ \mathcal{L}\{e^{-at}\} = \frac{1}{s+a} $$
@@ -163,27 +163,27 @@ $$ \mathcal{L}\{e^{-at}\} = \frac{1}{s+a} $$
 ## Laplace Transform Tables
 
 ### Basic Functions
-| Time Domain Function | Laplace Transform |
-|----------------------|-------------------|
-| Unit Impulse $\delta(t)$ | $1$ |
-| Unit Step $u(t)$ | $\frac{1}{s}$ |
-| Unit Ramp $t$ | $\frac{1}{s^2}$ |
-| Polynomial $t^n$ | $\frac{n!}{s^{n+1}}$ |
-| Exponential $e^{-at}$ | $\frac{1}{s+a}$ |
-| Sine Wave $\sin(\omega t)$ | $\frac{\omega}{s^2+\omega^2}$ |
-| Cosine Wave $\cos(\omega t)$ | $\frac{s}{s^2+\omega^2}$ |
-| Damped Sine $e^{-at}\sin(\omega t)$ | $\frac{\omega}{(s+a)^2+\omega^2}$ |
-| Damped Cosine $e^{-at}\cos(\omega t)$ | $\frac{s+a}{(s+a)^2+\omega^2}$ |
+| Name |Time Domain Function| Laplace Transform |
+|----------------------|----------------------|----------------------|
+| Unit Impulse | $\delta(t)$ | $1$ |
+| Unit Step | $u(t)$ | $\frac{1}{s}$ |
+| Unit Ramp | $t$ | $\frac{1}{s^2}$ |
+| Polynomial | $t^n$ | $\frac{n!}{s^{n+1}}$ |
+| Exponential | $e^{-at}$ | $\frac{1}{s+a}$ |
+| Sine Wave | $\sin(\omega t)$ | $\frac{\omega}{s^2+\omega^2}$ |
+| Cosine Wave | $\cos(\omega t)$ | $\frac{s}{s^2+\omega^2}$ |
+| Damped Sine | $e^{-at}\sin(\omega t)$ | $\frac{\omega}{(s+a)^2+\omega^2}$ |
+| Damped Cosine | $e^{-at}\cos(\omega t)$ | $\frac{s+a}{(s+a)^2+\omega^2}$ |
 
 ### Advanced Functions
-| Time Domain Function | Laplace Transform |
-|----------------------|-------------------|
-| Sinh Wave $\sinh(at)$ | $\frac{a}{s^2-a^2}$ |
-| Cosh Wave $\cosh(at)$ | $\frac{s}{s^2-a^2}$ |
-| Damped Sinh $e^{-bt}\sinh(at)$ | $\frac{a}{(s+b)^2-a^2}$ |
-| Damped Cosh $e^{-bt}\cosh(at)$ | $\frac{s+b}{(s+b)^2-a^2}$ |
-| $\frac{e^{-at} - e^{-bt}}{b-a}$ when $a \neq b$ | $\frac{1}{(s+a)(s+b)}$ |
-| $\frac{ae^{-at} - be^{-bt}}{a-b}$ when $a \neq b$ | $\frac{s}{(s+a)(s+b)}$ |
+| Name |Time Domain Function| Laplace Transform |
+|----------------------|----------------------|----------------------|
+| Sinh Wave | $\sinh(at)$ | $\frac{a}{s^2-a^2}$ |
+| Cosh Wave | $\cosh(at)$ | $\frac{s}{s^2-a^2}$ |
+| Damped Sinh | $e^{-bt}\sinh(at)$ | $\frac{a}{(s+b)^2-a^2}$ |
+| Damped Cosh | $e^{-bt}\cosh(at)$ | $\frac{s+b}{(s+b)^2-a^2}$ |
+| |$\frac{e^{-at} - e^{-bt}}{b-a}$ when $a \neq b$ | $\frac{1}{(s+a)(s+b)}$ |
+| |$\frac{ae^{-at} - be^{-bt}}{a-b}$ when $a \neq b$ | $\frac{s}{(s+a)(s+b)}$ |
 
 ## The Laplace Inverse Transformation
 
@@ -247,6 +247,8 @@ $$ y(t) = e^{-2.5t}[\cos(1.5t) - 0.33\sin(1.5t)] $$
 ## Transient Analysis using Laplace Transform
 
 Instead of transforming time-domain differential equations to the s-domain, we can use the s-domain version of Ohm's law directly to write algebraic equations for circuits.
+
+![Diagram 07](https://github.com/NirmalKBandara/theory-of-electricity/blob/958320c32e2f9287f38bc16234df8b8ce3a7e450/images/laplace/Screenshot%20From%202025-06-14%2013-44-33.png)
 
 ### Circuit Elements in s-Domain
 
